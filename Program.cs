@@ -49,11 +49,14 @@ namespace WeaponsReport
 
             public void Execute()
             {
+                int count = 1;
+                
                 Console.WriteLine("Вот вообще все кто есть:\n");
                 ShowInfo(_soldiers);
+
                 var requiredSoldiers = _soldiers.Select(soldier => new { soldier.Name, soldier.Rank });
+
                 Console.WriteLine("\nА вот после выборки:\n");
-                int count = 1;
 
                 foreach (var soldier in requiredSoldiers)
                 {
@@ -64,6 +67,7 @@ namespace WeaponsReport
             private void ShowInfo(List<Soldier> soldiers)
             {
                 int count = 1;
+
                 foreach (Soldier soldier in soldiers)
                 {
                     Console.Write(count++);
