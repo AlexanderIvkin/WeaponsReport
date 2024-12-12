@@ -51,9 +51,7 @@ namespace WeaponsReport
             {
                 Console.WriteLine("Вот вообще все кто есть:\n");
                 ShowInfo(_soldiers);
-
                 var requiredSoldiers = _soldiers.Select(soldier => new { soldier.Name, soldier.Rank });
-
                 Console.WriteLine("\nА вот после выборки:\n");
                 int count = 1;
 
@@ -107,11 +105,6 @@ namespace WeaponsReport
 
         class Soldier
         {
-            public string Name { get; }
-            public string Weapon { get; }
-            public string Rank { get; }
-            public int MilitaryService { get; }
-
             public Soldier(string name, string weapon, string rank, int militaryService)
             {
                 Name = name;
@@ -119,6 +112,11 @@ namespace WeaponsReport
                 Rank = rank;
                 MilitaryService = militaryService;
             }
+
+            public string Name { get; }
+            public string Weapon { get; }
+            public string Rank { get; }
+            public int MilitaryService { get; }
 
             public void ShowInfo()
             {
